@@ -2,8 +2,8 @@ import { isCpf } from "../isCpf";
 
 describe("isCpf - Função para verificar se o valor é um CPF válido", () => {
   it("Deve retornar undefined se o CPF for válido", () => {
-    expect(isCpf("04097105043")).toBeUndefined();
-    expect(isCpf("040.971.050-43")).toBeUndefined();
+    expect(isCpf("76868644809")).toBeUndefined();
+    expect(isCpf("768.686.448-09")).toBeUndefined();
   });
 
   it("Deve retornar undefined se o valor for vazio", () => {
@@ -11,8 +11,8 @@ describe("isCpf - Função para verificar se o valor é um CPF válido", () => {
   });
 
   it("Deve retornar um erro se o CPF for inválido", () => {
-    expect(() => isCpf("04097105044")).toThrow();
-    expect(() => isCpf("040.971.050-44")).toThrow();
+    expect(() => isCpf("76868644800")).toThrow();
+    expect(() => isCpf("768.686.448-00")).toThrow();
   });
 
   it("Deve retornar um erro se todos os dígitos forem iguais", () => {
@@ -21,8 +21,8 @@ describe("isCpf - Função para verificar se o valor é um CPF válido", () => {
   });
 
   it("Deve retornar um erro se o CPF não tíver 11 dígitos", () => {
-    expect(() => isCpf("040971050431")).toThrow();
-    expect(() => isCpf("040.971.050-431")).toThrow();
+    expect(() => isCpf("768686448091")).toThrow();
+    expect(() => isCpf("768.686.448-091")).toThrow();
   });
 
   it("Deve retornar um erro se o segundo dígito verificador for inválido", () => {
